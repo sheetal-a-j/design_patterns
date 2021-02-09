@@ -1,16 +1,16 @@
 # _**DESIGN PATTERNS**_
 
 ## _**INTRODUCTION :**_
-**Design Patterns**  are typical solutions to commonly occurring problems in software design. They are like pre-made blueprints that we can customize to solve a recurring design problem in our code. Design Patterns differ by their complexity, level of detail and scale of applicability to the entire system being designed.  
+**Design Patterns**  are typical solutions to commonly occurring problems in software design. They are like pre-made blueprints that we can customize to solve a recurring design problem in our code. Design Patterns differ by their complexity, level of detail and scale of applicability to the entire system which is being designed.  
 
-##  _**CLASSIFICATION OF DESIGN PATTERNS :**_
+##  _**CLASSIFICATION OF DESIGN PATTERNS:**_
 
-Design Patterns can be catagorized based on their intent . Those are
-  * **Creational Patterns :** It provides object creation mechanism that increases flexibility and reuse of code.
-  * **Structural Patterns :** It explains how to assemble objects and classes into large structures, while keeping the structures flexible and efficient.
-  * **Behavioural Patterns :** It takes care of effective communication and the assignment of responsibilities between objects.
+Design Patterns can be categorized based on their intent. Those are
+  * **Creational Patterns:** It provides object creation mechanism that increases flexibility and reuse of code.
+  * **Structural Patterns:** It explains how to assemble objects and classes into large structures while keeping the structures flexible and efficient.
+  * **Behavioural Patterns:** It takes care of effective communication and the assignment of responsibilities between objects.
   
-There are different types of Design Patterns under these catagories. 5 different types among them are:
+There are different types of Design Patterns under these categories. 5 different types among them are:
  1. Singleton
  2. Factor Method
  3. Abstract Factory
@@ -18,14 +18,14 @@ There are different types of Design Patterns under these catagories. 5 different
  5. Adapter
    
 ### _**Singleton design pattern :**_
-**Singleton Design Pattern** comes under Creational design pattern.
+**Singleton Design Pattern** comes under creational design pattern.
 
 According to the Gof, the intent of this  pattern is to :
-> “Ensure a class only has one instance, and provide a global point of access to it.”
+> Ensure that class has one object, and provide a global point of access to it.
 
 [Structure of Singleton Design pttern](https://refactoring.guru/images/patterns/diagrams/singleton/structure-en.png)
 
-This design pattern creates only single instance which is accessible to multiple clients. Examples, where this scenario is required are like file system, system manager, etc.
+This design pattern creates only single instance which is accessible to multiple clients. examples, where this scenario is required are like file system, system manager, etc.
 ### **Code:**
 ```ruby
 # The Singleton class defines the `instance` method that lets clients access the unique singleton instance.
@@ -36,7 +36,7 @@ class Singleton
 
   # The static method that controls the access to the singleton instance.
   #
-  # This implementation let you subclass the Singleton class while keeping just one instance of each subclass around.
+  # This implementation lets you subclass the Singleton class while keeping just one instance of each subclass around.
   def self.instance
     @instance
   end
@@ -69,12 +69,12 @@ Singleton works, both variables contain the same instance.
 **Factory pattern**  is the most used Creational Pattern in the OOP world because it saves a lot of time in the future when there is a need to modify your existing classes.
 
 According to GoF, the intent of this pattern is to,
->Define an interface for creating objects, but let subclasses to decide which class to instantiate and refers to the newly created object through a common interface.
+>Define an interface for creating objects, but lets subclasses decide which class to instantiate and refers to the newly created object through a common interface.
 
-**Key points :**
+**Key points:**
 * Creat a object without revealing the creation logic to the client and refer the newly created object using a common interface.
-* To get an object of similar type dynamically, based on parameter we passed.
-* If we create object by using new operator inside whole application, and if due to some reason like object creation configuration parameter are changed, then it is very hard to perform change in every place and in such scenario factory method play a vital role to avoid dependencies.
+* To get an object of similar type dynamically, based on a parameter we passed.
+* If we create a object by using new operator inside the whole application, and if due to some reason like object creation configuration parameter are changed, then it is very hard to perform changes in every place and in such scenario factory method play a vital role to avoid dependencies.
 
 [Structure of Factory method Design pattern](https://bogdanvlviv.com/images/posts/ruby/patterns/design-patterns-in-ruby/factory-method_pattern.png)
 
@@ -208,11 +208,11 @@ The Algae Algae1 soaks up the sun and grows.
 According to GoF, the intent of this pattern is to,
 >Provide an interface for creating families of related or dependent objects without specifying their concrete class.
 
-**Key points :**
+**Key points:**
 * This design pattern is simply an extension of factory method pattern with one additional layer of abstraction,
 * It is used to create more than one type of product
-* It is best suitable when there is a need of multiple families of product. The key characteristic is that the pattern will decouple the concrete classes from the client.
-* Abstract factory contains a set of factory classes having its own factory method which is responsible to create concrete product of related types. Therefore according to the client request, abstract factory returns factory classes, which contains factory method and client will get the concrete product through a factory class to perform a specific operation. 
+* It is best suitable when there is a need of multiple families of products. The key characteristic is that the pattern will decouple the concrete classes from the client.
+* Abstract factory contains a set of factory classes having its own factory method, which is responsible for creating the concrete product of related types. Therefore according to the client's request, Abstract factory returns factory classes, which contains factory method and client will get the concrete product through a factory class to perform a specific operation. 
 
 [Structure of Abstract Factory design pattern](https://bogdanvlviv.com/images/posts/ruby/patterns/design-patterns-in-ruby/abstract-factory_pattern.png)
 
@@ -324,10 +324,10 @@ The tree tree1 grows tall.
 According to GoF, the intent of this pattern is to,
 >Separate the construction of a complex object from its representation so that the same construction processes can create different representations.
 
-**Key points :**
+**Key points:**
 * Builder pattern is a part of Creational  Pattern as it is helpfull in building the objects step by step.
-* When we are creating the object of a particular class using the constructor, we have to remember all the parameters and its right sequence. It will be problem when there are so many parameters and when we dont want to set all the parameter at the same time. At that time Builder pattern is used.
-* Here we will use setter for each parameter, where we are proving the object as input and getting the same object as output after setting the value.
+* When we are creating the object of a particular class using the constructor, we have to remember all the parameters and it's right sequence. It will be problem when there are so many parameters and when we dont want to set all the parameter at the same time. At that time Builder pattern is used.
+* Here, we will use setter for each parameter, where we are proving the object as input and getting the same object as output after setting the value.
 * Final step will return the object by using GetProduct method.
 * The process of constructing an object should be generic so that it can be used to create different representations of the same object.
 
@@ -423,12 +423,12 @@ builder.add_dvd
 computer = builder.computer
 ```
 ### _**Adapter Design Pattern:**_
-Adapter is a Structural Pattern that allows objects with incompatible interfaces to collaborate.
+It is a Structural Pattern that allows objects with incompatible interfaces to collaborate.
 
-**Key points :**
-* It converts the interface of a class into another interface that  clients expect. Adapter lets classes work together that couldn't otherwise because of incompatible interfaces.
+**Key points:**
+* It converts the interface of a class into another interface that  client's expect. Adapter lets classes work together that couldn't otherwise because of incompatible interfaces.
 * Wrap an existing class with a new interface.
-* Impedence match an old component to a new system.
+* Impedance match an old component to a new system.
 
 [Structure of Adapter pattern ](https://bogdanvlviv.com/images/posts/ruby/patterns/design-patterns-in-ruby/adapter_pattern.png)
 
